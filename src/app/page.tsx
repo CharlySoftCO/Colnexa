@@ -95,20 +95,8 @@ const BENEFITS = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [benefitIdx, setBenefitIdx] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [autoPlay, setAutoPlay] = useState(true);
   const [activeService, setActiveService] = useState('agents');
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 600);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   useEffect(() => {
     const navbar = document.querySelector(`.${styles.navbar}`);
@@ -131,52 +119,18 @@ export default function Home() {
     return () => nav?.removeEventListener("click", handleNavClick);
   }, []);
 
-  // Cierra el menú al hacer clic fuera
   useEffect(() => {
-    if (!menuOpen) return;
-    const handleClick = (e: MouseEvent) => {
-      const nav = document.querySelector(`.${styles.navbar}`);
-      if (nav && !nav.contains(e.target as Node)) setMenuOpen(false);
-    };
+    function handleClick(e: MouseEvent) {
+      if (!navRef.current) return;
+      if (!navRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
     document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
   }, [menuOpen]);
 
   const sectionRefs = useSectionAnimation();
-
-  // Carrusel automático de beneficios en móvil
-  const benefitsRowRef = useRef<HTMLDivElement>(null);
-
-  // Auto-avance cada 2000ms en móvil
-  useEffect(() => {
-    if (!isMobile || !autoPlay) return;
-    const interval = setInterval(() => {
-      setBenefitIdx(idx => (idx + 1) % BENEFITS.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [isMobile, autoPlay]);
-
-  // Swipe handlers solo en móvil
-  const onTouchStart = (e: React.TouchEvent) => {
-    setAutoPlay(false);
-    touchStartX.current = e.touches[0].clientX;
-  };
-  const onTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-  const onTouchEnd = () => {
-    if (touchStartX.current === null || touchEndX.current === null) return;
-    const dx = touchEndX.current - touchStartX.current;
-    if (dx > 40 && benefitIdx > 0) setBenefitIdx(benefitIdx - 1);
-    else if (dx < -40 && benefitIdx < BENEFITS.length - 1) setBenefitIdx(benefitIdx + 1);
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
-  const onDotClick = (i: number) => {
-    setAutoPlay(false);
-    setBenefitIdx(i);
-  };
 
   return (
     <div className={styles.page}>
