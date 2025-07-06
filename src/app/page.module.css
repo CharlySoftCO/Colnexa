@@ -1,10 +1,3 @@
-:root {
-  --brand-main: #0471B6;
-  --brand-main-dark: #035a8e;
-  --whatsapp-green: #25D366;
-  --whatsapp-dark: #128C7E;
-}
-
 .page {
   min-height: 100vh;
   display: flex;

@@ -1,6 +1,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --brand-main: #0471B6;
+  --brand-main-dark: #035a8e;
+  --whatsapp-green: #25D366;
+  --whatsapp-dark: #128C7E;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,8 +21,13 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
