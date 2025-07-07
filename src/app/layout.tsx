@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Colnexa - Soluciones Tecnológicas Integrales",
   description: "Agentes IA, Desarrollo de Software e Infraestructura IT. Soluciones personalizadas para hacer crecer tu negocio con tecnología de vanguardia.",
+  icons: {
+    icon: "/favicon.jpg",
+  },
 };
 
 export default function RootLayout({
