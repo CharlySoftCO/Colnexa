@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
-import { FaUser, FaUserPlus, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 
 function smoothScrollTo(targetY: number, duration = 600) {
   const startY = window.scrollY;
