@@ -1674,10 +1674,10 @@
   background: linear-gradient(90deg, var(--brand-main) 0%, var(--brand-main-dark) 100%);
   color: #fff;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   border: none;
-  border-radius: 32px;
-  padding: 12px 28px;
+  border-radius: 9999px;
+  padding: 8px 18px;
   text-decoration: none;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
@@ -1686,6 +1686,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 36px;
 }
 
 .clientAccessBtn:hover {
@@ -1693,4 +1694,50 @@
   color: #fff;
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 18px 0 #0471b62a;
+}
+
+.loginBtn {
+  background: linear-gradient(90deg, #e0f2ff 0%, #f4faff 100%);
+  color: var(--brand-main-dark);
+  font-weight: 800;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 24px 0 #0471b633;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  letter-spacing: 0.02em;
+}
+.loginBtn:hover {
+  background: linear-gradient(90deg, #d0eaff 0%, #e6f4fa 100%);
+  color: var(--brand-main);
+  box-shadow: 0 8px 32px 0 #0471b655;
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .priceBtn, .whatsappBtn, .registerBtn, .loginBtn, .clientAccessBtn {
+    font-size: 0.93rem;
+    padding: 7px 14px;
+    min-width: 90px;
+    border-radius: 9999px;
+    min-height: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .priceBtn, .whatsappBtn, .registerBtn, .loginBtn, .clientAccessBtn {
+    font-size: 0.91rem;
+    padding: 6px 10px;
+    min-width: 70px;
+    border-radius: 9999px;
+    min-height: 28px;
+  }
 }

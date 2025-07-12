@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaCloud, FaUser } from "react-icons/fa";
 
 function smoothScrollTo(targetY: number, duration = 600) {
   const startY = window.scrollY;
@@ -150,7 +150,14 @@ export default function Home() {
           <a href="#contacto">Contacto</a>
         </nav>
         <div className={styles.navActions}>
-          <a className={styles.clientAccessBtn} href="https://app.colnexa.com.co" target="_blank" rel="noopener noreferrer">Acceso Clientes</a>
+          <a className={styles.clientAccessBtn} href="https://app.colnexa.com.co" target="_blank" rel="noopener noreferrer">
+            <FaCloud style={{ marginRight: 8, fontSize: 18 }} />
+            Colnexa Cloud
+          </a>
+          <a className={styles.loginBtn} href="https://dash.colnexa.com.co" target="_blank" rel="noopener noreferrer">
+            <FaUser style={{ marginRight: 8, fontSize: 18 }} />
+            Iniciar Sesión
+          </a>
         </div>
         <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
           <span />
@@ -165,7 +172,14 @@ export default function Home() {
             <a href="#inicio" onClick={() => setMenuOpen(false)}>Inicio</a>
             <a href="#servicios" onClick={() => setMenuOpen(false)}>Servicios</a>
             <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
-            <a className={styles.clientAccessBtn} href="https://app.colnexa.com.co" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Acceso Clientes</a>
+            <a className={styles.clientAccessBtn} href="https://app.colnexa.com.co" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
+              <FaCloud style={{ marginRight: 8, fontSize: 18 }} />
+              Colnexa Cloud
+            </a>
+            <a className={styles.loginBtn} href="https://dash.colnexa.com.co" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>
+              <FaUser style={{ marginRight: 8, fontSize: 18 }} />
+              Iniciar Sesión
+            </a>
           </div>
         )}
       </div>
