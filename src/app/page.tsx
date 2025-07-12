@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
-import { FaUser, FaStar, FaTimes } from "react-icons/fa";
+import { FaUser, FaUserPlus, FaTimes } from "react-icons/fa";
 
 function smoothScrollTo(targetY: number, duration = 600) {
   const startY = window.scrollY;
@@ -150,8 +150,7 @@ export default function Home() {
           <a href="#contacto">Contacto</a>
         </nav>
         <div className={styles.navActions}>
-          <a className={styles.loginBtn} href="/login"><FaUser style={{marginRight:8}}/>Iniciar sesión</a>
-          <a className={styles.registerBtn} href="/register"><FaStar style={{marginRight:8}}/>Registrarse</a>
+          <a className={styles.clientAccessBtn} href="https://app.colnexa.com.co" target="_blank" rel="noopener noreferrer">Acceso Clientes</a>
         </div>
         <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
           <span />
@@ -166,8 +165,7 @@ export default function Home() {
             <a href="#inicio" onClick={() => setMenuOpen(false)}>Inicio</a>
             <a href="#servicios" onClick={() => setMenuOpen(false)}>Servicios</a>
             <a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
-            <a className={styles.mobileLoginBtn} href="/login" onClick={() => setMenuOpen(false)}><FaUser style={{marginRight:8}}/>Iniciar sesión</a>
-            <a className={styles.mobileRegisterBtn} href="/register" onClick={() => setMenuOpen(false)}><FaStar style={{marginRight:8}}/>Registrarse</a>
+            <a className={styles.clientAccessBtn} href="https://app.colnexa.com.co" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Acceso Clientes</a>
           </div>
         )}
       </div>
@@ -204,7 +202,7 @@ export default function Home() {
             </p>
             <a
               className={styles.whatsappBtn}
-              href="https://wa.me/5212345678901"
+              href="https://wa.me/573025795093?text=Hola%2C%20quiero%20mi%20agente%20IA%20para%20mi%20negocio"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -239,7 +237,7 @@ export default function Home() {
               className={`${styles.serviceTab} ${activeService === 'infrastructure' ? styles.serviceTabActive : ''}`}
               onClick={() => setActiveService('infrastructure')}
             >
-              🏢 Infraestructura IT
+              🏢 Soluciones Empresariales
             </button>
           </div>
 
@@ -264,9 +262,14 @@ export default function Home() {
                 </div>
 
                 <div className={styles.serviceCTA}>
-                  <button className={styles.whatsappBtn}>
+                  <a
+                    className={styles.whatsappBtn}
+                    href="https://wa.me/573025795093?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Agentes%20de%20Inteligencia%20Artificial"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     💬 Consultar por WhatsApp
-                  </button>
+                  </a>
                 </div>
               </div>
             )}
@@ -307,7 +310,14 @@ export default function Home() {
                       <li>Formulario de contacto</li>
                       <li>Integración redes sociales</li>
                     </ul>
-                    <button className={styles.priceBtn}>Consultar</button>
+                    <a
+                      className={styles.priceBtn}
+                      href="https://wa.me/573025795093?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20Landing%20Page%20web%20de%20Colnexa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      💬 Consultar
+                    </a>
                   </div>
                   
                   <div className={styles.webPlanCard}>
@@ -319,7 +329,14 @@ export default function Home() {
                       <li>Blog integrado</li>
                       <li>Analytics incluido</li>
                     </ul>
-                    <button className={styles.priceBtn}>Consultar</button>
+                    <a
+                      className={styles.priceBtn}
+                      href="https://wa.me/573025795093?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20Web%20Corporativa%20de%20Colnexa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      💬 Consultar
+                    </a>
                   </div>
                   
                   <div className={styles.webPlanCard}>
@@ -331,7 +348,14 @@ export default function Home() {
                       <li>Pasarela de pagos</li>
                       <li>Gestión de inventario</li>
                     </ul>
-                    <button className={styles.priceBtn}>Consultar</button>
+                    <a
+                      className={styles.priceBtn}
+                      href="https://wa.me/573025795093?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20Tienda%20Online%20de%20Colnexa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      💬 Consultar
+                    </a>
                   </div>
                 </div>
               </div>
@@ -340,7 +364,16 @@ export default function Home() {
             {/* Infraestructura IT */}
             {activeService === 'infrastructure' && (
               <div className={styles.servicePanel}>
-                <h3 className={styles.servicePanelTitle}>Infraestructura IT</h3>
+                {/* Frases de impacto */}
+                <div style={{ marginBottom: 24 }}>
+                  <h4 style={{ color: '#0471B6', fontWeight: 800, fontSize: '1.25rem', margin: 0 }}>
+                    ¡Transforma tu empresa con tecnología de clase mundial!
+                  </h4>
+                  <p style={{ color: '#25d366', fontWeight: 600, fontSize: '1.08rem', margin: '8px 0 0 0' }}>
+                    ¿Listo para llevar tu infraestructura al siguiente nivel?
+                  </p>
+                </div>
+                <h3 className={styles.servicePanelTitle}>Soluciones Empresariales</h3>
                 <p className={styles.servicePanelDescription}>
                   Soluciones integrales de cloud, datacenter y networking personalizadas para tu empresa
                 </p>
@@ -379,9 +412,14 @@ export default function Home() {
                 </div>
 
                 <div className={styles.serviceCTA}>
-                  <button className={styles.whatsappBtn}>
+                  <a
+                    className={styles.whatsappBtn}
+                    href="https://wa.me/573025795093?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20personalizada%20para%20Soluciones%20Empresariales"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     💬 Solicitar Cotización Personalizada
-                  </button>
+                  </a>
                 </div>
               </div>
             )}
@@ -393,9 +431,14 @@ export default function Home() {
           <h2>Contacto</h2>
           <p>¿Tienes dudas? Escríbenos por WhatsApp o envía un correo a <a href="mailto:info@colnexa.com">info@colnexa.com</a></p>
           <div className={styles.contactButtons}>
-            <button className={styles.whatsappBtn}>
+            <a
+              className={styles.whatsappBtn}
+              href="https://wa.me/573025795093?text=Hola%2C%20tengo%20dudas%20y%20quiero%20informaci%C3%B3n%20de%20Colnexa"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               💬 WhatsApp
-            </button>
+            </a>
           </div>
         </section>
       </main>

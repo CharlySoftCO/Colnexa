@@ -480,6 +480,11 @@
   overflow: hidden;
 }
 
+.whatsappBtn:hover {
+  background: linear-gradient(90deg, var(--whatsapp-dark) 0%, var(--whatsapp-green) 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.18); }
   70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
@@ -692,7 +697,7 @@
 }
 
 .priceBtn {
-  background: linear-gradient(90deg, var(--brand-main) 0%, var(--brand-main-dark) 100%);
+  background: linear-gradient(90deg, var(--whatsapp-green) 0%, var(--whatsapp-dark) 100%);
   color: #fff;
   font-weight: 700;
   font-size: 1.05rem;
@@ -703,11 +708,11 @@
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
   outline: none;
-  box-shadow: 0 2px 12px 0 rgba(4,113,182,0.13);
+  box-shadow: 0 2px 12px 0 rgba(37,211,102,0.13);
 }
 
 .priceBtn:hover {
-  background: linear-gradient(90deg, var(--brand-main-dark) 0%, var(--brand-main) 100%);
+  background: linear-gradient(90deg, var(--whatsapp-dark) 0%, var(--whatsapp-green) 100%);
   transform: translateY(-2px) scale(1.04);
 }
 
@@ -1466,7 +1471,8 @@
   text-align: center;
 }
 .serviceTab:hover {
-  background: #e6f4fa;
+  background: linear-gradient(135deg, #0471B6 0%, #00c6fb 100%);
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 16px 0 #0471b62a;
 }
@@ -1662,4 +1668,29 @@
     padding: 16px 12px 12px 12px;
     font-size: 0.93rem;
   }
+}
+
+.clientAccessBtn {
+  background: linear-gradient(90deg, var(--brand-main) 0%, var(--brand-main-dark) 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 32px;
+  padding: 12px 28px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 12px 0 rgba(4,113,182,0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clientAccessBtn:hover {
+  background: linear-gradient(90deg, var(--brand-main-dark) 0%, var(--brand-main) 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 18px 0 #0471b62a;
 }
